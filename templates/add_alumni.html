@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alumni Management System - Add Alumni</title>
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">Alumni Management SMIT - IT Dept</div>
+            <ul class="nav">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{url_for('add_alumni')}}">Alumni</a></li>
+                <li><a href="{{url_for('events')}}">Events</a></li>
+                <li><a href="{{url_for('forum')}}">Forum</a></li>
+                <li><a href="{{url_for('gallery')}}">Gallery</a></li>
+                <li><a href="{{url_for('about')}}">About</a></li>
+                <li><a href="{{url_for('login')}}">Logout</a></li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="sidebar">
+                <h3>Welcome, User</h3>
+                <ul>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Edit Profile</a></li>
+                    <li><a href="#">Change Password</a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+                <h3>Search Alumni</h3>
+                <form>
+                    <input type="text" name="name" placeholder="Name">
+                    <input type="text" name="course" placeholder="Course">
+                    <input type="text" name="batch" placeholder="Batch">
+                    <input type="submit" value="Search">
+                </form>
+            </div>
+            <div class="container">
+                <div class="content">
+                    <h3>Add Alumni</h3>
+                    <form method="post" action="{{ url_for('add_alumni') }}" enctype="multipart/form-data">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                        <label for="year_of_passout">Year of Passout:</label>
+                        <input type="text" id="year_of_passout" name="year_of_passout" required>
+                        <label for="current_designation">Current Designation:</label>
+                        <input type="text" id="current_designation" name="current_designation" required>
+                        <label for="organization">Organization:</label>
+                        <input type="text" id="organization" name="organization" required>
+                        <label for="photo">Photo:</label>
+                        <input type="file" id="photo" name="photo">
+                        <input type="submit" value="Add Alumni">
+                    </form>
+                </div>
+                <div class="alumni-list">
+                    <h3>Alumni List</h3>
+                    {% for alumni in alumni_list %}
+                    <div class="alumni-entry">
+                        <img src="{{ url_for('static', filename='uploads/' ~ alumni.photo_filename) }}" alt="Alumni Photo">
+                        <p>Name: {{ alumni.name }}</p>
+                        <p>Year of Passout: {{ alumni.year_of_passout }}</p>
+                        <p>Current Designation: {{ alumni.current_designation }}</p>
+                        <p>Organization: {{ alumni.organization }}</p>
+                    </div>
+                    {% else %}
+                    <p>No alumni added yet.</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </body>
+        </html>

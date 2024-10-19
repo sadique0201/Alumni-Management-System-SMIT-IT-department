@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alumni Management System - Forum</title>
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">Alumni Management SMIT - IT Dept</div>
+            <ul class="nav">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{url_for('add_alumni')}}">Alumni</a></li>
+                <li><a href="{{url_for('events')}}">Events</a></li>
+                <li><a href="{{url_for('forum')}}">Forum</a></li>
+                <li><a href="{{url_for('gallery')}}">Gallery</a></li>
+                <li><a href="{{url_for('about')}}">About</a></li>
+                <li><a href="{{url_for('login')}}">Logout</a></li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="sidebar">
+                <h3>Welcome, User</h3>
+                <ul>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Edit Profile</a></li>
+                    <li><a href="#">Change Password</a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+                <h3>Search Alumni</h3>
+                <form>
+                    <input type="text" name="name" placeholder="Name">
+                    <input type="text" name="course" placeholder="Course">
+                    <input type="text" name="batch" placeholder="Batch">
+                    <input type="submit" value="Search">
+                </form>
+            </div>
+            <div class="content">
+                <h3>Forum</h3>
+                <p>Join the discussion with your fellow alumni. Share your thoughts, ask questions, and help others.</p>
+                <h3>Create a New Thread</h3>
+                <form>
+                    <label for="title">Thread Title</label>
+                    <input type="text" id="title" name="title" required>
+                    <label for="content">Content</label>
+                    <textarea id="content" name="content" rows="10" cols="50" required></textarea>
+                    <input type="submit" value="Post Thread">
+                </form>
+                <h3>Latest Threads</h3>
+                <table>
+                    <tr>
+                        <th>Title</th>
+                        <th>Started By</th>
+                        <th>Date</th>
+                        <th>Replies</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <td>Looking for job opportunities in data science</td>
+                        <td>SADIQUE AHMED</td>
+                        <td>2024-02-20</td>
+                        <td>5</td>
+                        <td><a href="#">View Thread</a></td>
+                    </tr>
+                </table>
+                <p><a href="#">View All Threads</a></p>
+            </div>
+        </div>
+        <div class="footer">
+            <p>© 2024 Alumni Management System. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alumni Management System - Gallery</title>
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">Alumni Management SMIT - IT Dept</div>
+            <ul class="nav">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{url_for('add_alumni')}}">Alumni</a></li>
+                <li><a href="{{url_for('events')}}">Events</a></li>
+                <li><a href="{{url_for('forum')}}">Forum</a></li>
+                <li><a href="{{url_for('gallery')}}">Gallery</a></li>
+                <li><a href="{{url_for('about')}}">About</a></li>
+                <li><a href="{{url_for('login')}}">Logout</a></li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="sidebar">
+                <h3>Welcome, User</h3>
+                <ul>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Edit Profile</a></li>
+                    <li><a href="#">Change Password</a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+                <h3>Search Alumni</h3>
+                <form>
+                    <input type="text" name="name" placeholder="Name">
+                    <input type="text" name="course" placeholder="Course">
+                    <input type="text" name="batch" placeholder="Batch">
+                    <input type="submit" value="Search">
+                </form>
+            </div>
+            <div class="content">
+                <h3>Gallery</h3>
+                <p>Take a look at the memories we've made together. You can also upload your own photos to share with our alumni community.</p>
+                <h3>Upload a Photo</h3>
+                <form>
+                    <label for="photo">Select a photo:</label>
+                    <input type="file" id="photo" name="photo" accept="image/*" required>
+                    <label for="caption">Caption:</label>
+                    <input type="text" id="caption" name="caption">
+                    <input type="submit" value="Upload Photo">
+                </form>
+                <h3>Latest Photos</h3>
+                <!-- Photos will be displayed here -->
+            </div>
+        </div>
+        <div class="footer">
+            <p>© 2024 Alumni Management System. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alumni Management System - Login</title>
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">Alumni Management SMIT - IT Dept</div>
+        </div>
+        <div class="main">
+            <div class="content">
+                <h3>Login</h3>
+                <form method="post" action="{{ url_for('login') }}">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                    <input type="submit" value="Login">
+                </form>
+                <p>Don't have an account? <a href="{{ url_for('register') }}">Register</a></p>
+            </div>
+        </div>
+        <div class="footer">
+            <p>© 2024 Alumni Management System. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

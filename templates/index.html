@@ -1,0 +1,83 @@
+<html>
+<head>
+    <title>Alumni Management System</title>
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">Alumni Management SMIT - IT Dept</div>
+            <ul class="nav">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{url_for('add_alumni')}}">Alumni</a></li>
+                <li><a href="{{url_for('events')}}">Events</a></li>
+                <li><a href="{{url_for('forum')}}">Forum</a></li>
+                <li><a href="{{url_for('gallery')}}">Gallery</a></li>
+                <li><a href="{{url_for('about')}}">About</a></li>
+                <li><a href="{{url_for('login')}}">Logout</a></li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="sidebar">
+                <h3>Welcome, {{ username }}</h3>
+                <ul>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Edit Profile</a></li>
+                    <li><a href="#">Change Password</a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+                <h3>Search Alumni</h3>
+                <form>
+                    <input type="text" name="name" placeholder="Name">
+                    <input type="text" name="course" placeholder="Course">
+                    <input type="text" name="batch" placeholder="Batch">
+                    <input type="submit" value="Search">
+                </form>
+            </div>
+            <div class="content">
+                <h3>Dashboard</h3>
+                <p>Welcome to the alumni management system. Here you can connect with your fellow alumni, share your achievements, find job opportunities, participate in events, and more.</p>
+                <h3>Latest Jobs</h3>
+                <table>
+                    <tr>
+                        <th>Title</th>
+                        <th>Company</th>
+                        <th>Location</th>
+                        <th>Posted By</th>
+                        <th>Date</th>
+                    </tr>
+                    <tr>
+                        <td>Software Engineer</td>
+                        <td>Google</td>
+                        <td>INDIA</td>
+                        <td>SADIQUE AHMED</td>
+                        <td>2024-02-20</td>
+                    </tr>
+                </table>
+                <p><a href="#">View All Jobs</a></p>
+                <h3>Upcoming Events</h3>
+                <table>
+                    <tr>
+                        <th>Title</th>
+                        <th>Venue</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Organizer</th>
+                    </tr>
+                    <tr>
+                        <td>Alumni Meet 2024</td>
+                        <td>College Auditorium</td>
+                        <td>2024-03-10</td>
+                        <td>10:00 AM</td>
+                        <td>Alumni Association</td>
+                    </tr>
+                </table>
+                <p><a href="#">View All Events</a></p>
+            </div>
+        </div>
+        <div class="footer">
+            <p>&copy; 2024 Alumni Management System. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

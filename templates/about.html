@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alumni Management System - About</title>
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">Alumni Management SMIT - IT Dept</div>
+            <ul class="nav">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{url_for('add_alumni')}}">Alumni</a></li>
+                <li><a href="{{url_for('events')}}">Events</a></li>
+                <li><a href="{{url_for('forum')}}">Forum</a></li>
+                <li><a href="{{url_for('gallery')}}">Gallery</a></li>
+                <li><a href="{{url_for('about')}}">About</a></li>
+                <li><a href="{{url_for('login')}}">Logout</a></li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="sidebar">
+                <h3>Welcome, User</h3>
+                <ul>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Edit Profile</a></li>
+                    <li><a href="#">Change Password</a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+                <h3>Search Alumni</h3>
+                <form>
+                    <input type="text" name="name" placeholder="Name">
+                    <input type="text" name="course" placeholder="Course">
+                    <input type="text" name="batch" placeholder="Batch">
+                    <input type="submit" value="Search">
+                </form>
+            </div>
+            <div class="content">
+                <h3>About Us</h3>
+                <p>The Alumni Management System- IT Dept is a platform designed to connect Department of IT alumni, share experiences, and foster a sense of community. Our mission is to provide a space where Department of IT alumni can stay connected with their alma mater, find job opportunities, participate in events, and more.</p>
+                <p>We believe in the power of connection and the value of a strong alumni network. We hope this platform serves as a valuable resource for all alumni.</p>
+                <h3>Contact Us</h3>
+                <p>If you have any questions, suggestions, or feedback, please feel free to contact us sadiqueahmed4245@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer">
+            <p>© 2024 Alumni Management System. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

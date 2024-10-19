@@ -1,0 +1,82 @@
+    <!DOCTYPE html>
+<html>
+<head>
+    <title>Alumni Management System - Events</title>
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">Alumni Management SMIT - IT Dept</div>
+            <ul class="nav">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{url_for('add_alumni')}}">Alumni</a></li>
+                <li><a href="{{url_for('events')}}">Events</a></li>
+                <li><a href="{{url_for('forum')}}">Forum</a></li>
+                <li><a href="{{url_for('gallery')}}">Gallery</a></li>
+                <li><a href="{{url_for('about')}}">About</a></li>
+                <li><a href="{{url_for('login')}}">Logout</a></li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="sidebar">
+                <h3>Welcome, User</h3>
+                <ul>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Edit Profile</a></li>
+                    <li><a href="#">Change Password</a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+                <h3>Search Alumni</h3>
+                <form>
+                    <input type="text" name="name" placeholder="Name">
+                    <input type="text" name="course" placeholder="Course">
+                    <input type="text" name="batch" placeholder="Batch">
+                    <input type="submit" value="Search">
+                </form>
+            </div>
+            <div class="content">
+                <h3>Events</h3>
+                <p>Here you can find the latest events organized by our alumni or by the college. You can also post your own events or register for the ones that interest you.</p>
+                <h3>Post an Event</h3>
+                <form>
+                    <label for="title">Event Title</label>
+                    <input type="text" id="title" name="title" required>
+                    <label for="venue">Venue</label>
+                    <input type="text" id="venue" name="venue" required>
+                    <label for="date">Date</label>
+                    <input type="date" id="date" name="date" required>
+                    <label for="time">Time</label>
+                    <input type="time" id="time" name="time" required>
+                    <label for="description">Event Description</label>
+                    <textarea id="description" name="description" rows="4" cols="50" required></textarea>
+                    <input type="submit" value="Post Event">
+                </form>
+                <h3>Upcoming Events</h3>
+                <table>
+                    <tr>
+                        <th>Title</th>
+                        <th>Venue</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Organizer</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <td>Alumni Meet 2024</td>
+                        <td>College Auditorium</td>
+                        <td>2024-03-10</td>
+                        <td>10:00 AM</td>
+                        <td>Alumni Association</td>
+                        <td><a href="#">View Details</a> | <a href="#">Register</a></td>
+                    </tr>
+                </table>
+                <p><a href="#">View All Events</a></p>
+            </div>
+        </div>
+        <div class="footer">
+            <p>© 2024 Alumni Management System. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

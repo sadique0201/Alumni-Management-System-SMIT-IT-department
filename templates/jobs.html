@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Alumni Management System - Jobs</title>
+        <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <div class="logo">Alumni Management SMIT - IT Dept</div>
+                <ul class="nav">
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{url_for('jobs')}}">Jobs</a></li>
+                    <li><a href="{{url_for('events')}}">Events</a></li>
+                    <li><a href="{{url_for('forum')}}">Forum</a></li>
+                    <li><a href="{{url_for('gallery')}}">Gallery</a></li>
+                    <li><a href="{{url_for('about')}}">About</a></li>
+                    <li><a href="{{url_for('login')}}">Login</a></li>
+                </ul>
+            </div>
+            <div class="main">
+                <div class="sidebar">
+                    <h3>Welcome, User</h3>
+                    <ul>
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#">Edit Profile</a></li>
+                        <li><a href="#">Change Password</a></li>
+                        <li><a href="#">Logout</a></li>
+                    </ul>
+                    <h3>Search Alumni</h3>
+                    <form>
+                        <input type="text" name="name" placeholder="Name">
+                        <input type="text" name="course" placeholder="Course">
+                        <input type="text" name="batch" placeholder="Batch">
+                        <input type="submit" value="Search">
+                    </form>
+                </div>
+                <div class="content">
+                    <h3>Jobs</h3>
+                    <p>Here you can find the latest job opportunities posted by your fellow alumni or by the employers who are looking for talented candidates from your alma mater. You can also post your own job openings or apply for the ones that interest you.</p>
+                    <h3>Post a Job</h3>
+                    <form>
+                        <label for="title">Job Title</label>
+                        <input type="text" id="title" name="title" required>
+                        <label for="company">Company Name</label>
+                        <input type="text" id="company" name="company" required>
+                        <label for="location">Job Location</label>
+                        <input type="text" id="location" name="location" required>
+                        <label for="salary">Salary Range</label>
+                        <input type="text" id="salary" name="salary">
+                        <label for="contact">Contact Details</label>
+                        <input type="text" id="contact" name="contact" required>
+                        <label for="description">Job Description</label>
+                        <textarea id="description" name="description" rows="10" cols="50" required></textarea>
+                        <input type="submit" value="Post Job">
+                    </form>
+                    <h3>Available Jobs</h3>
+                    <table>
+                        <tr>
+                            <th>Title</th>
+                            <th>Company</th>
+                            <th>Location</th>
+                            <th>Posted By</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                        </tr>
+                        <tr>
+                            <td>Software Engineer</td>
+                            <td>Google</td>
+                            <td>INDIA</td>
+                            <td>SADIQUE AHMED</td>
+                            <td>2024-02-20</td>
+                            <td><a href="#">View Details</a> | <a href="#">Apply Now</a></td>
+                        </tr>
+                    </table>
+                    <p><a href="#">View All Jobs</a></p>
+                </div>
+            </div>
+            <div class="footer">
+                <p>© 2024 Alumni Management System. All rights reserved.</p>
+            </div>
+        </div>
+    </body>
+</html>
